@@ -10,6 +10,14 @@ const router = express.Router();
 
 // router.use("/items", itemsRouter);
 
+const categoriesRouter = require("./categories/router");
+
+router.use("/categories", categoriesRouter);
+
+const { sayWelcome } = require("../../controllers/sayAction");
+
+router.get("/", sayWelcome);
+
 const programRouter = require("./programs/router");
 
 router.use("/programs", programRouter);
